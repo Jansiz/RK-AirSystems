@@ -47,7 +47,7 @@ export default function Banner() {
               <button
                 onClick={scrollToContact}
                 className="flex items-center justify-center px-4 py-2 border border-transparent rounded-full 
-                         shadow-sm text-sm font-medium text-primary bg-secondary hover:bg-blue-light 
+                         shadow-sm text-sm font-medium text-white bg-secondary hover:bg-blue-light 
                          transition-all duration-300 w-full sm:w-auto"
               >
                 Learn More
