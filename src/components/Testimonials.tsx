@@ -134,7 +134,7 @@ export default function Testimonials() {
   const stats = [
     { start: 0, end: 300, suffix: '+', label: 'Happy Clients' },
     { start: 0, end: 750, suffix: '+', label: 'Projects Completed' },
-    { start: 0, end: 5, suffix: '', label: 'Years Experience' },
+    { start: 0, end: 5, suffix: '+', label: 'Years Experience' },
     { start: 0, end: 100, suffix: '%', label: 'Client Satisfaction' }
   ];
 
