@@ -106,7 +106,7 @@ export default function Contact() {
             method="POST"
             className="space-y-6 bg-neutral-100 p-8 rounded-2xl"
           >
-            <input type="hidden" name="_next" value="http://localhost:3000/?success=true#contact" />
+            <input type="hidden" name="_next" value="https://www.rkairsystems.ca/?success=true#contact" />
             <input type="hidden" name="_subject" value="New Contact Form Submission" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
