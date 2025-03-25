@@ -5,6 +5,18 @@ import { useState, useEffect } from "react";
 
 export default function Contact() {
   const [showSuccess, setShowSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    honeypot: '', // Honeypot field
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error';
+    message: string;
+  } | null>(null);
 
   // Check URL for success parameter
   useEffect(() => {
@@ -19,8 +31,62 @@ export default function Contact() {
     }
   }, []);
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Check honeypot
+    if (formData.honeypot) {
+      console.log('Bot detected');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you for your message. We will get back to you soon!'
+      });
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        honeypot: '',
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again later.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   return (
-    <section id="contact" className="py-24 bg-white relative">
+    <section id="contact" className="py-16 bg-gray-50 relative">
       {/* Success Popup */}
       {showSuccess && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -102,8 +168,7 @@ export default function Contact() {
             </div>
           </div>
           <form 
-            action="https://formsubmit.co/rob@rkairsystems.ca" 
-            method="POST"
+            onSubmit={handleSubmit}
             className="space-y-6 bg-neutral-100 p-8 rounded-2xl"
           >
             <input type="hidden" name="_next" value="https://www.rkairsystems.ca/?success=true#contact" />
@@ -117,6 +182,8 @@ export default function Contact() {
                 name="name"
                 placeholder="Your Name"
                 required
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full px-6 py-4 rounded-xl border-2 border-neutral-200 
                           focus:border-secondary focus:outline-none transition-colors
                           text-neutral-900 placeholder:text-neutral-500"
@@ -129,6 +196,22 @@ export default function Contact() {
                 name="email"
                 placeholder="Your Email"
                 required
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-6 py-4 rounded-xl border-2 border-neutral-200 
+                          focus:border-secondary focus:outline-none transition-colors
+                          text-neutral-900 placeholder:text-neutral-500"
+              />
+            </div>
+            
+            <div>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Your Phone"
+                required
+                value={formData.phone}
+                onChange={handleChange}
                 className="w-full px-6 py-4 rounded-xl border-2 border-neutral-200 
                           focus:border-secondary focus:outline-none transition-colors
                           text-neutral-900 placeholder:text-neutral-500"
@@ -141,20 +224,44 @@ export default function Contact() {
                 placeholder="Your Message"
                 rows={4}
                 required
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full px-6 py-4 rounded-xl border-2 border-neutral-200 
                           focus:border-secondary focus:outline-none transition-colors
                           text-neutral-900 placeholder:text-neutral-500 resize-none"
               ></textarea>
             </div>
             
-            <button 
+            {/* Honeypot field - hidden from real users */}
+            <div className="hidden">
+              <input
+                type="text"
+                name="honeypot"
+                value={formData.honeypot}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
+            </div>
+
+            {submitStatus && (
+              <div className={`rounded-md p-4 ${
+                submitStatus.type === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
+              }`}>
+                {submitStatus.message}
+              </div>
+            )}
+
+            <button
               type="submit"
+              disabled={isSubmitting}
               className="group relative px-8 py-3 bg-secondary text-white rounded-xl 
                         overflow-hidden transition-all duration-300 
                         hover:shadow-2xl hover:shadow-secondary/20 hover:scale-105"
             >
               <span className="relative z-10 font-semibold">
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-secondary via-blue-light to-secondary 
                             -translate-x-full group-hover:translate-x-full transition-transform duration-700" />

@@ -50,6 +50,13 @@ export default function Portfolio() {
   const nextSlide = () => setActiveIndex((prev) => (prev + 1) % projects.length);
   const prevSlide = () => setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
 
+  const scrollToContact = () => {
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="portfolio" className="py-24 bg-gradient-to-b from-neutral-100 to-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -87,12 +94,11 @@ export default function Portfolio() {
                   <p className="text-neutral-600 mb-6 leading-relaxed">
                     {projects[activeIndex].description}
                   </p>
-                  <button className="group relative px-8 py-3 bg-secondary text-white rounded-full 
-                                   overflow-hidden transition-all duration-300 
-                                   hover:shadow-2xl hover:shadow-secondary/20 hover:scale-105">
-                    <span className="relative z-10 font-semibold">Get a Quote</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-secondary via-blue-light to-secondary 
-                                  -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  <button
+                    onClick={scrollToContact}
+                    className="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-blue-light transition-colors"
+                  >
+                    Get Quote
                   </button>
                 </div>
               </div>

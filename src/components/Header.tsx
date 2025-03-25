@@ -74,7 +74,9 @@ export default function Header() {
                             overflow-hidden transition-all duration-300 
                             hover:shadow-2xl hover:shadow-secondary/20 hover:scale-105
                             border border-white/10">
-              <span className="relative z-10 font-semibold">Get Quote</span>
+              <a href="#contact">
+                <span className="relative z-10 font-semibold">Get Quote</span>
+              </a>
               <div className="absolute inset-0 bg-gradient-to-r from-secondary via-blue-light to-secondary 
                             -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             </button>
@@ -114,7 +116,9 @@ export default function Header() {
                 <button className="w-full group relative px-8 py-4 bg-secondary text-white rounded-full 
                                 overflow-hidden transition-all duration-300 
                                 hover:shadow-2xl hover:shadow-secondary/20 hover:scale-105">
-                  <span className="relative z-10 font-semibold">Get Quote</span>
+                  <a href="#contact">
+                    <span className="relative z-10 font-semibold">Get Quote</span>
+                  </a>
                   <div className="absolute inset-0 bg-gradient-to-r from-secondary via-blue-light to-secondary 
                                 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 </button>
