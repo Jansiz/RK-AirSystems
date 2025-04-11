@@ -16,6 +16,24 @@ export default function Testimonials() {
 
   const testimonials = [
     {
+      name: "Andrea Coates",
+      role: "Homeowner",
+      content: "I had an amazing experience with RK Air Services! From start to finish, Rob was professional, knowledgeable, and incredibly helpful. They provided prompt service, explained everything thoroughly, and ensured our HVAC system was running efficiently. It's clear they take pride in their work and value their customers. I highly recommend RK Air Services to anyone in Orillia looking for reliable and high-quality HVAC services!",
+      rating: 5
+    },
+    {
+      name: "br ford",
+      role: "Property Owner",
+      content: "Robert got our HRV system and heat pumps installed at our cottage. He was on time, kept to the schedule for the installation. Very professional and would definitely recommend this company.",
+      rating: 5
+    },
+    {
+      name: "Jackson Arcan",
+      role: "Client",
+      content: "My expierence with RK air systems was exceptional. Not only were they friendly but very knowledgeable and understanding when it came to questions and availability. I highly recommend this company for any specific needs you may have!",
+      rating: 5
+    },
+    {
       name: "Andrew Brown",
       role: "Homeowner",
       content: "I recently had RK Air Systems perform some ductwork for my legal secondary suite. Robby's team backed by his knowledge and experience got the job done in an extremely timely matter and produced top quality results. Highly recommend their services!",
@@ -198,6 +216,13 @@ export default function Testimonials() {
     });
   }, [inView, stats]);
 
+  const scrollToContact = () => {
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="testimonials" className="py-24 bg-primary" ref={sectionRefInView}>
       <div className="max-w-7xl mx-auto px-4">
@@ -289,7 +314,9 @@ export default function Testimonials() {
 
         {/* Call to Action */}
         <div className="text-center mt-20">
-          <button className="group relative px-8 py-3 bg-secondary text-white rounded-full 
+          <button 
+            onClick={scrollToContact}
+            className="group relative px-8 py-3 bg-secondary text-white rounded-full 
                            overflow-hidden transition-all duration-300 
                            hover:shadow-2xl hover:shadow-secondary/20 hover:scale-105">
             <span className="relative z-10 font-semibold">Get Your Free Consultation</span>

@@ -9,12 +9,13 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/#about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Portfolio', href: '/#portfolio' },
+    { name: 'Blogs', href: '/blogs' },
+    { name: 'Testimonials', href: '/#testimonials' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -74,7 +75,7 @@ export default function Header() {
                             overflow-hidden transition-all duration-300 
                             hover:shadow-2xl hover:shadow-secondary/20 hover:scale-105
                             border border-white/10">
-              <a href="#contact">
+              <a href="/#contact">
                 <span className="relative z-10 font-semibold">Get Quote</span>
               </a>
               <div className="absolute inset-0 bg-gradient-to-r from-secondary via-blue-light to-secondary 
@@ -116,7 +117,7 @@ export default function Header() {
                 <button className="w-full group relative px-8 py-4 bg-secondary text-white rounded-full 
                                 overflow-hidden transition-all duration-300 
                                 hover:shadow-2xl hover:shadow-secondary/20 hover:scale-105">
-                  <a href="#contact">
+                  <a href="/#contact">
                     <span className="relative z-10 font-semibold">Get Quote</span>
                   </a>
                   <div className="absolute inset-0 bg-gradient-to-r from-secondary via-blue-light to-secondary 
