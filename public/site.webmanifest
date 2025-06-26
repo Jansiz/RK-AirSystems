@@ -1,26 +1,31 @@
 {
-    "name": "RK AirSystems",
-    "short_name": "RK Air",
-    "description": "Professional HVAC installation and maintenance services by RK AirSystems",
+    "name": "RK AirSystems - Professional HVAC Solutions",
+    "short_name": "RK AirSystems",
+    "description": "Expert HVAC installation, repair & maintenance services in Barrie and surrounding areas",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#0F172A",
+    "background_color": "#ffffff",
     "theme_color": "#F59E0B",
-    "orientation": "portrait",
+    "orientation": "portrait-primary",
     "icons": [
       {
         "src": "/android-chrome-192x192.png",
         "sizes": "192x192",
         "type": "image/png",
-        "purpose": "any maskable"
+        "purpose": "maskable any"
       },
       {
         "src": "/android-chrome-512x512.png",
         "sizes": "512x512",
         "type": "image/png",
-        "purpose": "any maskable"
+        "purpose": "maskable any"
       }
     ],
+    "categories": ["business", "home", "utilities"],
+    "lang": "en-CA",
+    "dir": "ltr",
+    "scope": "/",
+    "prefer_related_applications": false,
     "shortcuts": [
       {
         "name": "Contact Us",

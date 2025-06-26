@@ -1,22 +1,41 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
 
 // This would typically come from a CMS or database
 const blogPosts = [
   {
+    id: 'summer-hvac-tips',
+    title: 'Summer HVAC Tips: Keep Your Cool and Cut Your Costs',
+    excerpt: 'Essential tips to keep your Barrie home cool and efficient during the summer months while reducing energy costs.',
+    date: '2025-06-15',
+    readTime: '4 min read',
+    image: '/summer-hvac-tips.jpg',
+    category: 'Maintenance'
+  },
+  {
+    id: 'wifi-thermostat-upgrade',
+    title: 'Why Wi‑Fi Thermostats Are a Smart HVAC Upgrade',
+    excerpt: 'Discover how smart thermostats can save energy, provide remote control, and integrate with your smart home system.',
+    date: '2025-06-09',
+    readTime: '5 min read',
+    image: '/smart-thermostat.jpg',
+    category: 'Energy Efficiency'
+  },
+  {
     id: 'air-conditioner-repair-barrie',
     title: 'Air Conditioner Repair in Barrie: Tips Before You Call the Pros',
     excerpt: 'Learn essential AC troubleshooting tips and when to call professional help for your air conditioning system.',
-    date: '2025-03-27',
+    date: '2025-06-27',
     readTime: '3 min read',
-    image: '/air-conditioner-repair.webp',
+    image: '/ac-repair-barrie.jpg',
     category: 'Maintenance'
   },
   {
     id: 'furnace-repair-barrie',
     title: 'Furnace Repair in Barrie: What You Need to Know & How RK Airsystems Can Help',
     excerpt: 'Learn about common furnace issues, troubleshooting tips, and when to call professionals for your furnace repair needs in Barrie.',
-    date: '2025-03-25',
+    date: '2024-03-25',
     readTime: '4 min read',
     image: '/furnace-issue-image.webp',
     category: 'Maintenance'
@@ -25,7 +44,7 @@ const blogPosts = [
     id: 'heat-pump-benefits',
     title: 'The Benefits of Heat Pumps for Year-Round Comfort',
     excerpt: 'Discover how heat pumps can provide efficient heating and cooling while reducing your energy bills.',
-    date: '2025-03-20',
+    date: '2024-03-20',
     readTime: '5 min read',
     image: '/heat-pump-blog.webp',
     category: 'Energy Efficiency'
@@ -34,7 +53,7 @@ const blogPosts = [
     id: 'hvac-maintenance-tips',
     title: 'Essential HVAC Maintenance Tips for Homeowners',
     excerpt: 'Learn the key maintenance tasks that will keep your HVAC system running efficiently all year long.',
-    date: '2025-03-15',
+    date: '2024-03-15',
     readTime: '4 min read',
     image: '/hvac-maintenance.webp',
     category: 'Maintenance'
@@ -43,12 +62,54 @@ const blogPosts = [
     id: 'indoor-air-quality',
     title: 'Improving Your Home\'s Indoor Air Quality',
     excerpt: 'Simple steps to enhance the air quality in your home and protect your family\'s health.',
-    date: '2025-03-10',
+    date: '2024-03-10',
     readTime: '6 min read',
     image: '/air-quality-blog.webp',
     category: 'Air Quality'
   }
 ];
+
+export const metadata: Metadata = {
+  title: 'HVAC Blogs & Tips | RK AirSystems - Expert HVAC Insights',
+  description: 'Expert HVAC insights, maintenance tips, and energy-saving strategies. Learn about furnace repair, air conditioning, heat pumps, and indoor air quality from Barrie\'s trusted HVAC professionals.',
+  keywords: 'HVAC blogs, furnace repair tips, air conditioning maintenance, heat pump benefits, indoor air quality, HVAC energy efficiency, Barrie HVAC tips, HVAC maintenance guide',
+  openGraph: {
+    title: 'HVAC Blogs & Tips | RK AirSystems - Expert HVAC Insights',
+    description: 'Expert HVAC insights, maintenance tips, and energy-saving strategies from Barrie\'s trusted HVAC professionals.',
+    url: 'https://www.rkairsystems.ca/blogs',
+    siteName: 'RK AirSystems',
+    locale: 'en_CA',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'RK AirSystems HVAC Blogs and Tips',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'HVAC Blogs & Tips | RK AirSystems - Expert HVAC Insights',
+    description: 'Expert HVAC insights, maintenance tips, and energy-saving strategies from Barrie\'s trusted HVAC professionals.',
+    images: ['/og-image.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.rkairsystems.ca/blogs',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
 
 export default function BlogsPage() {
   return (

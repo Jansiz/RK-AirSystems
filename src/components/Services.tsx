@@ -107,7 +107,7 @@ export default function Services() {
                         hover:shadow-2xl hover:shadow-secondary/20 
                         transition-all duration-500 transform hover:-translate-y-2"
             >
-              <div className="relative h-72">
+              <div className="relative h-72 overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -116,7 +116,8 @@ export default function Services() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent 
-                              opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                              opacity-0 group-hover:opacity-100 transition-opacity duration-500 
+                              scale-110 group-hover:scale-100 transition-transform duration-700" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-4">
