@@ -113,7 +113,7 @@ function findBestMatch(message: string): FAQEntry | null {
  * Generate CTA based on FAQ entry and user intent
  */
 function generateCTA(entry: FAQEntry | null, userMessage: string): ChatResponse['cta'] | undefined {
-  if (!entry || entry.ctaType === 'none') {
+  if (!entry || entry.ctaType === 'none' || !entry.ctaType) {
     // Check if user seems ready for service (booking keywords)
     const bookingKeywords = ['book', 'schedule', 'appointment', 'quote', 'estimate', 'consultation', 'install', 'repair'];
     const lowerMessage = userMessage.toLowerCase();
@@ -132,6 +132,9 @@ function generateCTA(entry: FAQEntry | null, userMessage: string): ChatResponse[
     return undefined;
   }
   
+  // At this point, TypeScript knows entry.ctaType is 'consultation' | 'service' | 'emergency'
+  const ctaType: 'consultation' | 'service' | 'emergency' = entry.ctaType;
+  
   const actions: NonNullable<ChatResponse['cta']>['actions'] = [
     { label: 'Call Now', action: 'call', value: contactInfo.phone },
     { label: 'Email Us', action: 'email', value: contactInfo.email }
@@ -139,7 +142,7 @@ function generateCTA(entry: FAQEntry | null, userMessage: string): ChatResponse[
   
   let message = '';
   
-  switch (entry.ctaType) {
+  switch (ctaType) {
     case 'emergency':
       message = 'This is urgent - please contact us immediately for emergency service.';
       break;
@@ -152,7 +155,7 @@ function generateCTA(entry: FAQEntry | null, userMessage: string): ChatResponse[
   }
   
   return {
-    type: entry.ctaType,
+    type: ctaType,
     message,
     actions
   };
