@@ -132,7 +132,7 @@ function generateCTA(entry: FAQEntry | null, userMessage: string): ChatResponse[
     return undefined;
   }
   
-  const actions: ChatResponse['cta']['actions'] = [
+  const actions: NonNullable<ChatResponse['cta']>['actions'] = [
     { label: 'Call Now', action: 'call', value: contactInfo.phone },
     { label: 'Email Us', action: 'email', value: contactInfo.email }
   ];
