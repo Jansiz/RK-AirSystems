@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { processMessage, getWelcomeMessage, ChatMessage, ChatResponse } from '@/lib/chatbot';
 import { commonQuestions } from '@/data/rk-kb';
 import { PhoneIcon, EnvelopeIcon, XMarkIcon, PaperAirplaneIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
@@ -11,6 +12,7 @@ interface MessageWithCTA extends ChatMessage {
 }
 
 export default function RKChatWidget() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<MessageWithCTA[]>([]);
   const [inputValue, setInputValue] = useState('');
@@ -102,7 +104,22 @@ export default function RKChatWidget() {
     if (action === 'call') {
       window.location.href = `tel:${value}`;
     } else if (action === 'email') {
-      window.location.href = `mailto:${value}`;
+      // Close chat widget
+      setIsOpen(false);
+      
+      // Check if we're on the home page
+      if (pathname === '/') {
+        // Scroll to contact form on current page
+        setTimeout(() => {
+          const contactSection = document.querySelector('#contact');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      } else {
+        // Navigate to home page with contact hash - using window.location for reliable hash navigation
+        window.location.href = '/#contact';
+      }
     } else if (action === 'link') {
       window.open(value, '_blank', 'noopener,noreferrer');
     }
