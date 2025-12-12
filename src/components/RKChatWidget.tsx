@@ -98,11 +98,13 @@ export default function RKChatWidget() {
   }
 
   // Handle CTA actions
-  function handleCTAAction(action: 'call' | 'email', value: string) {
+  function handleCTAAction(action: 'call' | 'email' | 'link', value: string) {
     if (action === 'call') {
       window.location.href = `tel:${value}`;
     } else if (action === 'email') {
       window.location.href = `mailto:${value}`;
+    } else if (action === 'link') {
+      window.open(value, '_blank', 'noopener,noreferrer');
     }
   }
 
@@ -212,15 +214,17 @@ export default function RKChatWidget() {
                                      hover:shadow-2xl hover:shadow-secondary/20 hover:scale-105 ${
                               action.action === 'call'
                                 ? 'bg-secondary text-white'
-                                : 'bg-blue-light text-white'
+                                : action.action === 'email'
+                                ? 'bg-blue-light text-white'
+                                : 'bg-secondary text-white'
                             }`}
                           >
                             <span className="relative z-10 flex items-center gap-2">
                               {action.action === 'call' ? (
                                 <PhoneIcon className="w-4 h-4" />
-                              ) : (
+                              ) : action.action === 'email' ? (
                                 <EnvelopeIcon className="w-4 h-4" />
-                              )}
+                              ) : null}
                               {action.label}
                             </span>
                             <div className="absolute inset-0 bg-gradient-to-r from-secondary via-blue-light to-secondary 
