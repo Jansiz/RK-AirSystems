@@ -66,6 +66,42 @@ const blogPosts = [
     readTime: '6 min read',
     image: '/air-quality-blog.webp',
     category: 'Air Quality'
+  },
+  {
+    id: 'fall-hvac-preparation',
+    title: 'Fall HVAC Preparation: Get Your Home Ready for Winter',
+    excerpt: 'Essential fall maintenance tasks to ensure your heating system is ready for Barrie\'s cold winter months.',
+    date: '2025-09-15',
+    readTime: '5 min read',
+    image: '/blog-sep.jpeg',
+    category: 'Maintenance'
+  },
+  {
+    id: 'winter-furnace-efficiency',
+    title: 'Maximizing Furnace Efficiency Before Winter Hits',
+    excerpt: 'Learn how to optimize your furnace performance and reduce heating costs during the coldest months of the year.',
+    date: '2025-10-18',
+    readTime: '4 min read',
+    image: '/blog-oct.jpeg',
+    category: 'Energy Efficiency'
+  },
+  {
+    id: 'energy-saving-winter-tips',
+    title: 'Energy-Saving HVAC Tips for Cold Weather',
+    excerpt: 'Practical strategies to keep your home warm and comfortable while minimizing energy consumption this winter.',
+    date: '2025-11-12',
+    readTime: '5 min read',
+    image: '/blog-nov.jpeg',
+    category: 'Energy Efficiency'
+  },
+  {
+    id: 'holiday-hvac-tips',
+    title: 'Holiday Season HVAC Tips: Keep Your Home Comfortable',
+    excerpt: 'Essential HVAC maintenance and efficiency tips to ensure a warm, comfortable home during the holiday season.',
+    date: '2025-12-08',
+    readTime: '4 min read',
+    image: '/blog-dec.jpeg',
+    category: 'Maintenance'
   }
 ];
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import ScrollToTop from "@/components/ScrollToTop";
 import Banner from '@/components/Banner';
 import StructuredData from '@/components/StructuredData';
+import RKChatWidget from '@/components/RKChatWidget';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -141,6 +142,7 @@ export default function RootLayout({
         {children}
         <Banner />
         <ScrollToTop />
+        <RKChatWidget />
       </body>
     </html>
   );
