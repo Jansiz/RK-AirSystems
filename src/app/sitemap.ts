@@ -3,15 +3,20 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.rkairsystems.ca'
   
-  // Blog posts data
+  // Blog posts data - updated with all optimized slugs
   const blogPosts = [
-    'summer-hvac-tips',
-    'wifi-thermostat-upgrade',
+    'heavy-snow-hvac-preparedness-barrie',
+    'holiday-hvac-tips-barrie',
+    'energy-saving-winter-tips-barrie',
+    'winter-furnace-efficiency-barrie',
+    'fall-hvac-preparation-barrie',
     'air-conditioner-repair-barrie',
+    'summer-hvac-tips-barrie',
+    'wifi-thermostat-upgrade-barrie',
     'furnace-repair-barrie',
-    'heat-pump-benefits',
-    'hvac-maintenance-tips',
-    'indoor-air-quality'
+    'heat-pump-benefits-barrie',
+    'hvac-maintenance-tips-barrie',
+    'indoor-air-quality-barrie'
   ]
 
   // Static pages
