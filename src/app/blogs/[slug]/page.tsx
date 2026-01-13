@@ -5,6 +5,219 @@ import { Metadata } from 'next';
 
 // Blog post data
 const blogPosts = {
+  'heavy-snow-barrie-hvac-protection': {
+    title: 'Heavy Snow in Barrie, Ontario: Protecting Your HVAC System This Winter',
+    date: '2026-01-21',
+    author: 'Rob Kloepfer',
+    readTime: '6 min read',
+    image: '/heavysnow-barrie.png',
+    category: 'Maintenance',
+    excerpt: 'Essential tips to protect your furnace, heat pump, and HVAC system during Barrie\'s heavy snowfall. Learn how to prevent damage and ensure reliable heating.',
+    content: `
+    <div class="text-gray-900 leading-relaxed font-sans">
+      <p class="text-lg mb-8">Barrie, Ontario is experiencing record-breaking snowfall this winter, and with heavy snow comes unique challenges for your HVAC system. As your trusted HVAC professionals in Barrie, RK Airsystems understands the importance of protecting your heating system during these extreme weather conditions. This comprehensive guide will help you safeguard your furnace, heat pump, and entire HVAC system from snow-related damage while ensuring your home stays warm and comfortable.</p>
+      
+      <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Understanding the Impact of Heavy Snow on HVAC Systems in Barrie</h2>
+      
+      <p class="text-lg mb-8">Barrie's location on the shores of Lake Simcoe makes it particularly susceptible to heavy lake-effect snow. When snow accumulates around your home, it can create several problems for your HVAC equipment:</p>
+      
+      <ul class="list-disc pl-8 space-y-3 text-lg mb-8">
+        <li><strong>Blocked air intake and exhaust vents</strong> - Snow can completely cover outdoor vents, causing dangerous carbon monoxide buildup and system failure</li>
+        <li><strong>Heat pump and AC unit damage</strong> - Heavy snow and ice can damage outdoor condenser units and heat pump components</li>
+        <li><strong>Increased heating load</strong> - Extreme cold and snow mean your furnace works harder, increasing energy costs and wear</li>
+        <li><strong>Ice dam formation</strong> - Melting snow can refreeze around HVAC equipment, causing blockages and damage</li>
+        <li><strong>Vent pipe obstruction</strong> - Snow accumulation can block furnace exhaust pipes, creating serious safety hazards</li>
+      </ul>
+      
+      <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Critical HVAC Safety Checks During Heavy Snow in Barrie</h2>
+      
+      <div class="space-y-8 mb-8">
+        <div>
+          <h3 class="text-primary font-semibold text-xl mb-3">1. Clear Snow from Outdoor Vents Immediately</h3>
+          <p class="text-lg mb-4">This is the most critical step for Barrie homeowners during heavy snowfall:</p>
+          <ul class="list-disc pl-8 space-y-2 text-lg">
+            <li>Locate all outdoor vents (furnace exhaust, fresh air intake, dryer vents)</li>
+            <li>Clear at least 3 feet of snow around each vent</li>
+            <li>Check vents after every major snowfall</li>
+            <li>Never use a shovel near vents - use a broom or your hands to avoid damage</li>
+            <li>Create a clear path for airflow around your home's foundation</li>
+          </ul>
+          <div class="bg-red-50 border-l-4 border-red-500 p-4 mt-4 rounded">
+            <p class="text-lg font-semibold text-red-900 mb-2">⚠️ Safety Warning</p>
+            <p class="text-lg text-red-800">Blocked furnace exhaust vents can cause carbon monoxide to back up into your home. If you smell gas or experience headaches, dizziness, or nausea, evacuate immediately and call 911, then contact RK Airsystems for emergency service.</p>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-primary font-semibold text-xl mb-3">2. Protect Your Heat Pump or AC Unit</h3>
+          <p class="text-lg mb-4">If you have a heat pump or air conditioning unit in Barrie, heavy snow requires special attention:</p>
+          <ul class="list-disc pl-8 space-y-2 text-lg">
+            <li>Clear snow from the top and sides of the unit (at least 2 feet clearance)</li>
+            <li>Remove ice buildup carefully to avoid damaging fins</li>
+            <li>Ensure the unit can defrost properly - don't cover it completely</li>
+            <li>Check that the unit is level and not sinking into snow</li>
+            <li>Inspect for ice dams that could damage the unit</li>
+          </ul>
+          <p class="text-lg mt-4"><strong>Note:</strong> Modern heat pumps are designed to work in cold Barrie winters, but they need proper airflow. Never completely cover your heat pump, even during heavy snow.</p>
+        </div>
+        
+        <div>
+          <h3 class="text-primary font-semibold text-xl mb-3">3. Inspect Your Furnace Exhaust Pipe</h3>
+          <p class="text-lg mb-4">Furnace exhaust pipes are particularly vulnerable during Barrie's heavy snowfalls:</p>
+          <ul class="list-disc pl-8 space-y-2 text-lg">
+            <li>Check the exhaust pipe (usually PVC pipe extending from your home) for snow blockage</li>
+            <li>Ensure the pipe extends at least 12 inches above expected snow levels</li>
+            <li>Look for ice buildup inside the pipe</li>
+            <li>Verify the pipe hasn't been damaged by snow removal equipment</li>
+            <li>Install a protective cap if your pipe is too low</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-primary font-semibold text-xl mb-3">4. Monitor Your Furnace Performance</h3>
+          <p class="text-lg mb-4">During heavy snow in Barrie, your furnace works harder than usual. Watch for these warning signs:</p>
+          <ul class="list-disc pl-8 space-y-2 text-lg">
+            <li>Furnace running constantly without reaching set temperature</li>
+            <li>Strange noises (banging, rattling, or whistling)</li>
+            <li>Yellow or flickering flame (should be steady blue)</li>
+            <li>Increased energy bills without explanation</li>
+            <li>Cold spots in your home</li>
+            <li>Furnace shutting off unexpectedly</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Preventive Measures for Barrie Homeowners</h2>
+      
+      <div class="space-y-6 mb-8">
+        <div>
+          <h3 class="text-primary font-semibold text-xl mb-3">Install Vent Guards and Extensions</h3>
+          <p class="text-lg">Consider installing vent guards or extending exhaust pipes above typical snow levels. This is especially important for homes in Barrie's snow belt areas. RK Airsystems can assess your home and recommend the best solutions for your specific situation.</p>
+        </div>
+        
+        <div>
+          <h3 class="text-primary font-semibold text-xl mb-3">Create a Snow Removal Schedule</h3>
+          <p class="text-lg">During heavy snow periods in Barrie, check and clear HVAC vents:</p>
+          <ul class="list-disc pl-8 space-y-2 text-lg mt-4">
+            <li>After every 6+ inches of snowfall</li>
+            <li>Before going to bed during active snowstorms</li>
+            <li>First thing in the morning after overnight snow</li>
+            <li>After snowplows pass your home (they can push snow against vents)</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-primary font-semibold text-xl mb-3">Maintain Proper Insulation</h3>
+          <p class="text-lg">Good insulation helps your HVAC system work efficiently during Barrie's cold, snowy winters. Ensure your home is properly insulated, especially around HVAC ductwork in attics and crawl spaces. This reduces the workload on your furnace and prevents ice dam formation.</p>
+        </div>
+        
+        <div>
+          <h3 class="text-primary font-semibold text-xl mb-3">Keep Emergency Supplies Ready</h3>
+          <p class="text-lg">During heavy snow in Barrie, have these items ready:</p>
+          <ul class="list-disc pl-8 space-y-2 text-lg mt-4">
+            <li>Broom or soft brush for clearing vents</li>
+            <li>Flashlight for checking vents in dark conditions</li>
+            <li>Carbon monoxide detector with fresh batteries</li>
+            <li>RK Airsystems emergency contact number: (705) 220-5272</li>
+            <li>Backup heating source (safely used space heater) if furnace fails</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="bg-gray-50 p-6 rounded-xl mb-8">
+        <h3 class="text-primary font-semibold text-xl mb-4">💡 Pro Tip for Barrie Homeowners</h3>
+        <p class="text-lg">Mark your outdoor vents with tall, visible markers before winter hits. This makes them easy to find even after heavy snow accumulation. You can use brightly colored flags or stakes that extend above typical snow levels.</p>
+      </div>
+      
+      <h2 class="text-primary font-bold text-3xl mt-12 mb-6">What to Do If Your HVAC System Fails During Heavy Snow</h2>
+      
+      <p class="text-lg mb-4">If your heating system stops working during heavy snow in Barrie:</p>
+      
+      <ol class="list-decimal pl-8 space-y-3 text-lg mb-8">
+        <li><strong>Check for blocked vents first</strong> - This is the most common cause of furnace failure during heavy snow</li>
+        <li><strong>Verify your carbon monoxide detector is working</strong> - Safety first!</li>
+        <li><strong>Check your thermostat</strong> - Ensure it's set correctly and has power</li>
+        <li><strong>Inspect your circuit breaker</strong> - Heavy snow can cause power issues</li>
+        <li><strong>Don't attempt complex repairs</strong> - Call RK Airsystems for professional help</li>
+      </ol>
+      
+      <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-xl mb-8">
+        <h3 class="text-primary font-semibold text-xl mb-4">❄️ Emergency HVAC Service in Barrie</h3>
+        <p class="text-lg mb-4">RK Airsystems offers 24/7 emergency HVAC service throughout Barrie, Ontario, even during heavy snowstorms. Our experienced technicians are equipped to handle snow-related HVAC emergencies safely and efficiently.</p>
+        <p class="text-lg font-semibold text-primary">Call us anytime: (705) 220-5272</p>
+      </div>
+      
+      <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Long-Term Solutions for Barrie's Heavy Snow Conditions</h2>
+      
+      <div class="space-y-6 mb-8">
+        <div>
+          <h3 class="text-primary font-semibold text-xl mb-3">Relocate Outdoor Equipment</h3>
+          <p class="text-lg">If your HVAC equipment is consistently buried in snow, consider relocating it to a more protected area. RK Airsystems can assess your property and recommend optimal placement that protects equipment while maintaining efficiency.</p>
+        </div>
+        
+        <div>
+          <h3 class="text-primary font-semibold text-xl mb-3">Upgrade to High-Efficiency Equipment</h3>
+          <p class="text-lg">Modern high-efficiency furnaces and heat pumps are better equipped to handle Barrie's extreme winter conditions. They work more efficiently, reducing energy costs even during heavy snow periods when heating demands are highest.</p>
+        </div>
+        
+        <div>
+          <h3 class="text-primary font-semibold text-xl mb-3">Install Smart Thermostats</h3>
+          <p class="text-lg">Smart thermostats can help you manage heating costs during heavy snow periods by optimizing temperature settings and alerting you to potential HVAC issues before they become emergencies.</p>
+        </div>
+      </div>
+      
+      <h2 class="text-primary font-bold text-3xl mt-12 mb-6">RK Airsystems: Your Barrie HVAC Experts</h2>
+      
+      <p class="text-lg mb-8">As Barrie's trusted HVAC professionals, RK Airsystems has been serving homeowners throughout Simcoe County for years. We understand the unique challenges that Barrie's heavy snowfall presents for HVAC systems, and we're here to help you protect your investment and keep your family warm.</p>
+      
+      <p class="text-lg mb-8">Our services include:</p>
+      
+      <ul class="list-none space-y-4 mb-8">
+        <li class="flex items-start">
+          <span class="text-primary mr-3">✅</span>
+          <div>
+            <strong class="text-primary font-semibold">Emergency HVAC Repair in Barrie</strong>
+            <p class="text-lg">24/7 service, even during heavy snowstorms</p>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <span class="text-primary mr-3">✅</span>
+          <div>
+            <strong class="text-primary font-semibold">Preventive Maintenance</strong>
+            <p class="text-lg">Comprehensive inspections to prepare your system for Barrie winters</p>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <span class="text-primary mr-3">✅</span>
+          <div>
+            <strong class="text-primary font-semibold">HVAC Installation & Upgrades</strong>
+            <p class="text-lg">Energy-efficient systems designed for Barrie's climate</p>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <span class="text-primary mr-3">✅</span>
+          <div>
+            <strong class="text-primary font-semibold">Vent Protection Solutions</strong>
+            <p class="text-lg">Custom solutions to protect your HVAC system from heavy snow</p>
+          </div>
+        </li>
+      </ul>
+      
+      <div class="bg-gradient-to-r from-primary to-primary-light p-8 rounded-xl text-white mb-8">
+        <h3 class="text-2xl font-bold mb-4">Don't Let Heavy Snow Leave You in the Cold</h3>
+        <p class="text-lg mb-6">With Barrie experiencing heavy snowfall this winter, now is the time to ensure your HVAC system is protected and ready. Whether you need emergency repair, preventive maintenance, or expert advice on protecting your system from snow damage, RK Airsystems is here to help.</p>
+        <p class="text-xl font-semibold mb-2">Serving Barrie, Ontario and Surrounding Areas</p>
+        <p class="text-lg">Call us today: <strong>(705) 220-5272</strong></p>
+        <p class="text-lg mt-4">Or visit our contact page to schedule a consultation.</p>
+      </div>
+      
+      <div class="text-lg font-medium mt-12">
+        <span class="text-primary text-2xl mr-2">🏠</span>
+        <strong class="text-primary">Stay warm and safe this winter in Barrie.</strong> Contact RK Airsystems today for professional HVAC service you can trust, even during the heaviest snowfall.
+      </div>
+    </div>
+    `
+  },
   'summer-hvac-tips': {
     title: 'Summer HVAC Tips: Keep Your Cool and Cut Your Costs',
     date: '2025-06-15',

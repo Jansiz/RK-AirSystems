@@ -3,7 +3,62 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 
 // This would typically come from a CMS or database
+// Blog posts sorted by date (newest to oldest)
 const blogPosts = [
+  {
+    id: 'heavy-snow-barrie-hvac-protection',
+    title: 'Heavy Snow in Barrie, Ontario: Protecting Your HVAC System This Winter',
+    excerpt: 'Essential tips to protect your furnace, heat pump, and HVAC system during Barrie\'s heavy snowfall. Learn how to prevent damage and ensure reliable heating.',
+    date: '2026-01-21',
+    readTime: '6 min read',
+    image: '/heavysnow-barrie.png',
+    category: 'Maintenance'
+  },
+  {
+    id: 'holiday-hvac-tips',
+    title: 'Holiday Season HVAC Tips: Keep Your Home Comfortable',
+    excerpt: 'Essential HVAC maintenance and efficiency tips to ensure a warm, comfortable home during the holiday season.',
+    date: '2025-12-08',
+    readTime: '4 min read',
+    image: '/blog-dec.jpeg',
+    category: 'Maintenance'
+  },
+  {
+    id: 'energy-saving-winter-tips',
+    title: 'Energy-Saving HVAC Tips for Cold Weather',
+    excerpt: 'Practical strategies to keep your home warm and comfortable while minimizing energy consumption this winter.',
+    date: '2025-11-12',
+    readTime: '5 min read',
+    image: '/blog-nov.jpeg',
+    category: 'Energy Efficiency'
+  },
+  {
+    id: 'winter-furnace-efficiency',
+    title: 'Maximizing Furnace Efficiency Before Winter Hits',
+    excerpt: 'Learn how to optimize your furnace performance and reduce heating costs during the coldest months of the year.',
+    date: '2025-10-18',
+    readTime: '4 min read',
+    image: '/blog-oct.jpeg',
+    category: 'Energy Efficiency'
+  },
+  {
+    id: 'fall-hvac-preparation',
+    title: 'Fall HVAC Preparation: Get Your Home Ready for Winter',
+    excerpt: 'Essential fall maintenance tasks to ensure your heating system is ready for Barrie\'s cold winter months.',
+    date: '2025-09-15',
+    readTime: '5 min read',
+    image: '/blog-sep.jpeg',
+    category: 'Maintenance'
+  },
+  {
+    id: 'air-conditioner-repair-barrie',
+    title: 'Air Conditioner Repair in Barrie: Tips Before You Call the Pros',
+    excerpt: 'Learn essential AC troubleshooting tips and when to call professional help for your air conditioning system.',
+    date: '2025-06-27',
+    readTime: '3 min read',
+    image: '/ac-repair-barrie.jpg',
+    category: 'Maintenance'
+  },
   {
     id: 'summer-hvac-tips',
     title: 'Summer HVAC Tips: Keep Your Cool and Cut Your Costs',
@@ -21,15 +76,6 @@ const blogPosts = [
     readTime: '5 min read',
     image: '/smart-thermostat.jpg',
     category: 'Energy Efficiency'
-  },
-  {
-    id: 'air-conditioner-repair-barrie',
-    title: 'Air Conditioner Repair in Barrie: Tips Before You Call the Pros',
-    excerpt: 'Learn essential AC troubleshooting tips and when to call professional help for your air conditioning system.',
-    date: '2025-06-27',
-    readTime: '3 min read',
-    image: '/ac-repair-barrie.jpg',
-    category: 'Maintenance'
   },
   {
     id: 'furnace-repair-barrie',
@@ -66,42 +112,6 @@ const blogPosts = [
     readTime: '6 min read',
     image: '/air-quality-blog.webp',
     category: 'Air Quality'
-  },
-  {
-    id: 'fall-hvac-preparation',
-    title: 'Fall HVAC Preparation: Get Your Home Ready for Winter',
-    excerpt: 'Essential fall maintenance tasks to ensure your heating system is ready for Barrie\'s cold winter months.',
-    date: '2025-09-15',
-    readTime: '5 min read',
-    image: '/blog-sep.jpeg',
-    category: 'Maintenance'
-  },
-  {
-    id: 'winter-furnace-efficiency',
-    title: 'Maximizing Furnace Efficiency Before Winter Hits',
-    excerpt: 'Learn how to optimize your furnace performance and reduce heating costs during the coldest months of the year.',
-    date: '2025-10-18',
-    readTime: '4 min read',
-    image: '/blog-oct.jpeg',
-    category: 'Energy Efficiency'
-  },
-  {
-    id: 'energy-saving-winter-tips',
-    title: 'Energy-Saving HVAC Tips for Cold Weather',
-    excerpt: 'Practical strategies to keep your home warm and comfortable while minimizing energy consumption this winter.',
-    date: '2025-11-12',
-    readTime: '5 min read',
-    image: '/blog-nov.jpeg',
-    category: 'Energy Efficiency'
-  },
-  {
-    id: 'holiday-hvac-tips',
-    title: 'Holiday Season HVAC Tips: Keep Your Home Comfortable',
-    excerpt: 'Essential HVAC maintenance and efficiency tips to ensure a warm, comfortable home during the holiday season.',
-    date: '2025-12-08',
-    readTime: '4 min read',
-    image: '/blog-dec.jpeg',
-    category: 'Maintenance'
   }
 ];
 
