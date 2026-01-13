@@ -6,45 +6,45 @@ import { Metadata } from 'next';
 // Blog posts sorted by date (newest to oldest)
 const blogPosts = [
   {
-    id: 'heavy-snow-barrie-hvac-protection',
+    id: 'heavy-snow-hvac-preparedness-barrie',
     title: 'Heavy Snow in Barrie, Ontario: Protecting Your HVAC System This Winter',
-    excerpt: 'Essential tips to protect your furnace, heat pump, and HVAC system during Barrie\'s heavy snowfall. Learn how to prevent damage and ensure reliable heating.',
-    date: '2026-01-21',
+    excerpt: 'Heavy snow in Barrie can strain your HVAC system. Learn how to protect your furnace and avoid emergency repairs this winter.',
+    date: '2026-01-12',
     readTime: '6 min read',
     image: '/heavysnow-barrie.png',
     category: 'Maintenance'
   },
   {
-    id: 'holiday-hvac-tips',
+    id: 'holiday-hvac-tips-barrie',
     title: 'Holiday Season HVAC Tips: Keep Your Home Comfortable',
-    excerpt: 'Essential HVAC maintenance and efficiency tips to ensure a warm, comfortable home during the holiday season.',
+    excerpt: 'Keep your Barrie home comfortable during the holidays. Essential HVAC tips for warm, efficient heating during celebrations.',
     date: '2025-12-08',
     readTime: '4 min read',
     image: '/blog-dec.jpeg',
     category: 'Maintenance'
   },
   {
-    id: 'energy-saving-winter-tips',
+    id: 'energy-saving-winter-tips-barrie',
     title: 'Energy-Saving HVAC Tips for Cold Weather',
-    excerpt: 'Practical strategies to keep your home warm and comfortable while minimizing energy consumption this winter.',
+    excerpt: 'Save on heating costs in Barrie this winter. Practical strategies to stay warm while minimizing energy consumption.',
     date: '2025-11-12',
     readTime: '5 min read',
     image: '/blog-nov.jpeg',
     category: 'Energy Efficiency'
   },
   {
-    id: 'winter-furnace-efficiency',
+    id: 'winter-furnace-efficiency-barrie',
     title: 'Maximizing Furnace Efficiency Before Winter Hits',
-    excerpt: 'Learn how to optimize your furnace performance and reduce heating costs during the coldest months of the year.',
+    excerpt: 'Maximize furnace efficiency in Barrie this winter. Learn how to optimize performance and reduce heating costs during cold months.',
     date: '2025-10-18',
     readTime: '4 min read',
     image: '/blog-oct.jpeg',
     category: 'Energy Efficiency'
   },
   {
-    id: 'fall-hvac-preparation',
+    id: 'fall-hvac-preparation-barrie',
     title: 'Fall HVAC Preparation: Get Your Home Ready for Winter',
-    excerpt: 'Essential fall maintenance tasks to ensure your heating system is ready for Barrie\'s cold winter months.',
+    excerpt: 'Prepare your HVAC system for Barrie\'s winter. Essential fall maintenance tasks to ensure reliable heating during cold months.',
     date: '2025-09-15',
     readTime: '5 min read',
     image: '/blog-sep.jpeg',
@@ -60,18 +60,18 @@ const blogPosts = [
     category: 'Maintenance'
   },
   {
-    id: 'summer-hvac-tips',
+    id: 'summer-hvac-tips-barrie',
     title: 'Summer HVAC Tips: Keep Your Cool and Cut Your Costs',
-    excerpt: 'Essential tips to keep your Barrie home cool and efficient during the summer months while reducing energy costs.',
+    excerpt: 'Keep your Barrie home cool this summer. Essential HVAC tips to reduce energy costs and maintain efficiency.',
     date: '2025-06-15',
     readTime: '4 min read',
     image: '/summer-hvac-tips.jpg',
     category: 'Maintenance'
   },
   {
-    id: 'wifi-thermostat-upgrade',
+    id: 'wifi-thermostat-upgrade-barrie',
     title: 'Why Wi‑Fi Thermostats Are a Smart HVAC Upgrade',
-    excerpt: 'Discover how smart thermostats can save energy, provide remote control, and integrate with your smart home system.',
+    excerpt: 'Smart thermostats in Barrie can save energy and provide remote control. Discover how Wi-Fi thermostats upgrade your HVAC system.',
     date: '2025-06-09',
     readTime: '5 min read',
     image: '/smart-thermostat.jpg',
@@ -80,34 +80,34 @@ const blogPosts = [
   {
     id: 'furnace-repair-barrie',
     title: 'Furnace Repair in Barrie: What You Need to Know & How RK Airsystems Can Help',
-    excerpt: 'Learn about common furnace issues, troubleshooting tips, and when to call professionals for your furnace repair needs in Barrie.',
+    excerpt: 'Furnace problems in Barrie? Learn common issues and when to call professionals for reliable furnace repair service.',
     date: '2024-03-25',
     readTime: '4 min read',
     image: '/furnace-issue-image.webp',
     category: 'Maintenance'
   },
   {
-    id: 'heat-pump-benefits',
+    id: 'heat-pump-benefits-barrie',
     title: 'The Benefits of Heat Pumps for Year-Round Comfort',
-    excerpt: 'Discover how heat pumps can provide efficient heating and cooling while reducing your energy bills.',
+    excerpt: 'Heat pumps in Barrie provide efficient heating and cooling year-round. Discover how they reduce energy bills and improve comfort.',
     date: '2024-03-20',
     readTime: '5 min read',
     image: '/heat-pump-blog.webp',
     category: 'Energy Efficiency'
   },
   {
-    id: 'hvac-maintenance-tips',
+    id: 'hvac-maintenance-tips-barrie',
     title: 'Essential HVAC Maintenance Tips for Homeowners',
-    excerpt: 'Learn the key maintenance tasks that will keep your HVAC system running efficiently all year long.',
+    excerpt: 'Keep your HVAC system running efficiently in Barrie. Essential maintenance tips to prevent costly repairs and ensure year-round comfort.',
     date: '2024-03-15',
     readTime: '4 min read',
     image: '/hvac-maintenance.webp',
     category: 'Maintenance'
   },
   {
-    id: 'indoor-air-quality',
+    id: 'indoor-air-quality-barrie',
     title: 'Improving Your Home\'s Indoor Air Quality',
-    excerpt: 'Simple steps to enhance the air quality in your home and protect your family\'s health.',
+    excerpt: 'Improve indoor air quality in your Barrie home. Simple steps to enhance air quality and protect your family\'s health year-round.',
     date: '2024-03-10',
     readTime: '6 min read',
     image: '/air-quality-blog.webp',

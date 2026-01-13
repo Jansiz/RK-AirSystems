@@ -3,19 +3,47 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
+// FAQ interface for structured data
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
 // Blog post data
 const blogPosts = {
-  'heavy-snow-barrie-hvac-protection': {
+  'heavy-snow-hvac-preparedness-barrie': {
     title: 'Heavy Snow in Barrie, Ontario: Protecting Your HVAC System This Winter',
-    date: '2026-01-21',
+    date: '2026-01-12',
     author: 'Rob Kloepfer',
     readTime: '6 min read',
     image: '/heavysnow-barrie.png',
     category: 'Maintenance',
-    excerpt: 'Essential tips to protect your furnace, heat pump, and HVAC system during Barrie\'s heavy snowfall. Learn how to prevent damage and ensure reliable heating.',
+    excerpt: 'Heavy snow in Barrie can strain your HVAC system. Learn how to protect your furnace and avoid emergency repairs this winter.',
+    faqs: [
+      {
+        question: 'Can snow damage my HVAC unit?',
+        answer: 'Yes, heavy snow can damage your HVAC system in several ways. Snow can block outdoor vents, causing dangerous carbon monoxide buildup. It can also damage heat pumps and AC condenser units if not properly cleared. Ice buildup can cause blockages and system failure.'
+      },
+      {
+        question: 'How often should I service my furnace in Barrie?',
+        answer: 'We recommend annual furnace maintenance in Barrie, ideally in the fall before winter hits. This ensures your system is ready for Barrie\'s harsh winters and can prevent costly emergency repairs during heavy snowfall.'
+      },
+      {
+        question: 'Should I cover my AC unit during winter?',
+        answer: 'No, you should not completely cover your AC unit during winter in Barrie. Modern heat pumps need proper airflow even in cold weather. However, you can use a breathable cover to protect it from debris, but ensure it doesn\'t restrict airflow.'
+      },
+      {
+        question: 'What should I do if my furnace stops working during a snowstorm?',
+        answer: 'First, check for blocked vents - this is the most common cause. Clear snow from outdoor vents immediately. Verify your carbon monoxide detector is working. Check your thermostat and circuit breaker. If the problem persists, call RK Airsystems for 24/7 emergency service in Barrie.'
+      },
+      {
+        question: 'How can I prevent HVAC damage during heavy snow in Barrie?',
+        answer: 'Clear snow from outdoor vents after every major snowfall, maintain at least 3 feet of clearance around vents, install vent guards or extensions, create a snow removal schedule, and schedule professional maintenance before winter. Mark your vents with tall markers for easy location after snow accumulation.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
-      <p class="text-lg mb-8">Barrie, Ontario is experiencing record-breaking snowfall this winter, and with heavy snow comes unique challenges for your HVAC system. As your trusted HVAC professionals in Barrie, RK Airsystems understands the importance of protecting your heating system during these extreme weather conditions. This comprehensive guide will help you safeguard your furnace, heat pump, and entire HVAC system from snow-related damage while ensuring your home stays warm and comfortable.</p>
+      <p class="text-lg mb-8">Barrie, Ontario is experiencing record-breaking snowfall this winter, and with heavy snow comes unique challenges for your HVAC system. As your trusted <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">HVAC professionals in Barrie</a>, RK Airsystems understands the importance of protecting your heating system during these extreme weather conditions. This comprehensive guide will help you safeguard your furnace, heat pump, and entire HVAC system from snow-related damage while ensuring your home stays warm and comfortable.</p>
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Understanding the Impact of Heavy Snow on HVAC Systems in Barrie</h2>
       
@@ -92,7 +120,7 @@ const blogPosts = {
       <div class="space-y-6 mb-8">
         <div>
           <h3 class="text-primary font-semibold text-xl mb-3">Install Vent Guards and Extensions</h3>
-          <p class="text-lg">Consider installing vent guards or extending exhaust pipes above typical snow levels. This is especially important for homes in Barrie's snow belt areas. RK Airsystems can assess your home and recommend the best solutions for your specific situation.</p>
+          <p class="text-lg">Consider installing vent guards or extending exhaust pipes above typical snow levels. This is especially important for homes in Barrie's snow belt areas. <a href="/#contact" class="text-primary hover:text-secondary underline font-semibold">RK Airsystems can assess your home</a> and recommend the best solutions for your specific situation.</p>
         </div>
         
         <div>
@@ -138,7 +166,7 @@ const blogPosts = {
         <li><strong>Verify your carbon monoxide detector is working</strong> - Safety first!</li>
         <li><strong>Check your thermostat</strong> - Ensure it's set correctly and has power</li>
         <li><strong>Inspect your circuit breaker</strong> - Heavy snow can cause power issues</li>
-        <li><strong>Don't attempt complex repairs</strong> - Call RK Airsystems for professional help</li>
+        <li><strong>Don't attempt complex repairs</strong> - Call <a href="/#contact" class="text-primary hover:text-secondary underline font-semibold">RK Airsystems for professional help</a></li>
       </ol>
       
       <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-xl mb-8">
@@ -162,7 +190,7 @@ const blogPosts = {
         
         <div>
           <h3 class="text-primary font-semibold text-xl mb-3">Install Smart Thermostats</h3>
-          <p class="text-lg">Smart thermostats can help you manage heating costs during heavy snow periods by optimizing temperature settings and alerting you to potential HVAC issues before they become emergencies.</p>
+          <p class="text-lg">Smart thermostats can help you manage heating costs during heavy snow periods by optimizing temperature settings and alerting you to potential HVAC issues before they become emergencies. Learn more about <a href="/blogs/wifi-thermostat-upgrade" class="text-primary hover:text-secondary underline font-semibold">Wi-Fi thermostat upgrades</a> for your Barrie home.</p>
         </div>
       </div>
       
@@ -218,19 +246,39 @@ const blogPosts = {
     </div>
     `
   },
-  'summer-hvac-tips': {
+  'summer-hvac-tips-barrie': {
     title: 'Summer HVAC Tips: Keep Your Cool and Cut Your Costs',
     date: '2025-06-15',
     author: 'Rob Kloepfer',
     readTime: '4 min read',
     image: '/summer-hvac-tips.jpg',
     category: 'Maintenance',
-    excerpt: 'Essential tips to keep your Barrie home cool and efficient during the summer months while reducing energy costs.',
+    excerpt: 'Keep your Barrie home cool this summer. Essential HVAC tips to reduce energy costs and maintain efficiency.',
+    faqs: [
+      {
+        question: 'How often should I service my AC in Barrie?',
+        answer: 'We recommend annual AC maintenance in Barrie, ideally in the spring before summer heat arrives. This includes checking refrigerant levels, cleaning coils, and ensuring optimal performance for Barrie\'s hot summers.'
+      },
+      {
+        question: 'What temperature should I set my AC in summer?',
+        answer: 'For optimal comfort and efficiency in Barrie, set your AC to 68-72°F (20-22°C) when home, and raise it to 78-80°F (25-27°C) when away. Using a programmable thermostat can save 10-15% on cooling costs.'
+      },
+      {
+        question: 'Why is my AC not cooling properly in Barrie?',
+        answer: 'Common causes include dirty filters, low refrigerant, blocked outdoor unit, or thermostat issues. Check your filter first, clear debris around the outdoor unit, and if problems persist, contact RK Airsystems for professional AC repair in Barrie.'
+      },
+      {
+        question: 'Should I cover my AC unit in winter?',
+        answer: 'You can use a breathable cover to protect your AC unit from debris during Barrie winters, but don\'t use a completely sealed cover as it can trap moisture and cause damage. Ensure proper airflow is maintained.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
       <p class="text-lg mb-8">With temperatures rising, your air conditioning system is about to be put to the test. Don't let the heat catch you off guard—these smart HVAC tips will keep your Barrie home cool and efficient all summer long.</p>
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">1. Schedule a Pre-Summer A/C Tune-Up</h2>
+      
+      <p class="text-lg mb-4">Before the heatwave hits, schedule professional <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">HVAC maintenance</a> in Barrie. We check for:</p>
       
       <p class="text-lg mb-4">Before the heatwave hits, get a professional inspection. We check for:</p>
       <ul class="list-disc pl-8 space-y-2 text-lg mb-8">
@@ -271,7 +319,7 @@ const blogPosts = {
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Stay Cool with RK Airsystems</h2>
       
-      <p class="text-lg mb-8">We offer affordable tune-ups, emergency repair, and energy-saving upgrades designed for Ontario summers. Whether you need A/C maintenance or a full system upgrade, we're here to help.</p>
+      <p class="text-lg mb-8">We offer affordable tune-ups, <a href="/blogs/air-conditioner-repair-barrie" class="text-primary hover:text-secondary underline font-semibold">emergency AC repair</a>, and energy-saving upgrades designed for Barrie summers. Whether you need A/C maintenance or a full system upgrade, <a href="/#contact" class="text-primary hover:text-secondary underline font-semibold">contact us</a> for professional service.</p>
       
       <div class="text-lg font-medium mt-12">
         <span class="text-primary text-2xl mr-2">❄️</span>
@@ -280,17 +328,39 @@ const blogPosts = {
     </div>
     `
   },
-  'wifi-thermostat-upgrade': {
+  'wifi-thermostat-upgrade-barrie': {
     title: 'Why Wi‑Fi Thermostats Are a Smart HVAC Upgrade',
     date: '2025-06-10',
     author: 'Rob Kloepfer',
     readTime: '5 min read',
     image: '/smart-thermostat.jpg',
     category: 'Energy Efficiency',
-    excerpt: 'Discover how smart thermostats can save energy, provide remote control, and integrate with your smart home system.',
+    excerpt: 'Smart thermostats in Barrie can save energy and provide remote control. Discover how Wi-Fi thermostats upgrade your HVAC system.',
+    faqs: [
+      {
+        question: 'How much can I save with a smart thermostat in Barrie?',
+        answer: 'Smart thermostats can reduce heating and cooling costs by 10-15% annually in Barrie. With Barrie\'s cold winters and hot summers, the savings can add up to hundreds of dollars per year, making the investment pay for itself quickly.'
+      },
+      {
+        question: 'Do smart thermostats work with all HVAC systems in Barrie?',
+        answer: 'Most smart thermostats are compatible with standard HVAC systems in Barrie, including furnaces, heat pumps, and central air conditioning. However, compatibility depends on your system\'s wiring. RK Airsystems can assess your system and recommend the best smart thermostat for your Barrie home.'
+      },
+      {
+        question: 'Can I install a smart thermostat myself in Barrie?',
+        answer: 'While some homeowners install smart thermostats themselves, professional installation in Barrie ensures proper wiring, compatibility testing, and optimal configuration. RK Airsystems provides expert installation and setup to maximize your thermostat\'s efficiency and features.'
+      },
+      {
+        question: 'Which smart thermostat is best for Barrie\'s climate?',
+        answer: 'For Barrie\'s cold winters and hot summers, we recommend thermostats with learning capabilities like Nest or Ecobee. These adapt to Barrie\'s temperature extremes and can handle both heating and cooling efficiently. RK Airsystems can help you choose the best model for your Barrie home.'
+      },
+      {
+        question: 'Do smart thermostats require Wi-Fi in Barrie?',
+        answer: 'Yes, smart thermostats require a stable Wi-Fi connection to access remote control and learning features. However, they can still function as programmable thermostats if Wi-Fi is temporarily unavailable. Basic temperature control always works regardless of internet connectivity.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
-      <p class="text-lg mb-8">Modern problems require smart solutions—and when it comes to controlling your home's comfort, Wi-Fi thermostats are leading the way. These devices do more than just adjust the temperature—they learn your habits, maximize energy efficiency, and give you full control from anywhere in the world.</p>
+      <p class="text-lg mb-8">Modern problems require smart solutions—and when it comes to controlling your home's comfort, Wi-Fi thermostats are leading the way. These devices do more than just adjust the temperature—they learn your habits, maximize energy efficiency, and give you full control from anywhere in the world. For <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">HVAC installation and upgrades in Barrie</a>, smart thermostats are an excellent investment.</p>
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Benefits of Smart Thermostats</h2>
       
@@ -373,9 +443,9 @@ const blogPosts = {
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">RK Airsystems: Your Installation Experts</h2>
       
-      <p class="text-lg mb-8">Installing a Wi-Fi thermostat isn't always plug-and-play—compatibility with your furnace, AC, or heat pump matters. Our team at RK Airsystems ensures your new thermostat is correctly wired, configured, and integrated with your HVAC system. We'll also show you how to make the most of its features, including scheduling, app usage, and energy monitoring.</p>
+      <p class="text-lg mb-8">Installing a Wi-Fi thermostat isn't always plug-and-play—compatibility with your <a href="/blogs/furnace-repair-barrie" class="text-primary hover:text-secondary underline font-semibold">furnace</a>, <a href="/blogs/air-conditioner-repair-barrie" class="text-primary hover:text-secondary underline font-semibold">AC</a>, or <a href="/blogs/heat-pump-benefits" class="text-primary hover:text-secondary underline font-semibold">heat pump</a> matters. Our team at RK Airsystems ensures your new thermostat is correctly wired, configured, and integrated with your HVAC system. We'll also show you how to make the most of its features, including scheduling, app usage, and energy monitoring.</p>
       
-      <p class="text-lg mb-8">Whether you're upgrading for convenience, efficiency, or environmental impact, we make it simple.</p>
+      <p class="text-lg mb-8">Whether you're upgrading for convenience, efficiency, or environmental impact, <a href="/#contact" class="text-primary hover:text-secondary underline font-semibold">contact RK Airsystems</a> to make it simple.</p>
       
       <div class="text-lg font-medium mt-12">
         <span class="text-primary text-2xl mr-2">🚀</span>
@@ -391,7 +461,29 @@ const blogPosts = {
     readTime: '3 min read',
     image: '/ac-repair-barrie.jpg',
     category: 'Maintenance',
-    excerpt: 'Learn essential AC troubleshooting tips and when to call professional help for your air conditioning system.',
+    excerpt: 'AC not working in Barrie? Learn essential troubleshooting tips and when to call professionals for reliable air conditioning repair.',
+    faqs: [
+      {
+        question: 'How much does AC repair cost in Barrie?',
+        answer: 'AC repair costs in Barrie typically range from $150-600 for common repairs like capacitor replacement or refrigerant recharge. Major repairs like compressor replacement can cost $1,500-3,000. RK Airsystems provides upfront pricing with no surprises.'
+      },
+      {
+        question: 'How often should I service my AC in Barrie?',
+        answer: 'We recommend annual AC maintenance in Barrie, ideally in the spring before summer heat arrives. This includes cleaning coils, checking refrigerant levels, and ensuring optimal performance for Barrie\'s hot summers.'
+      },
+      {
+        question: 'Why is my AC not cooling in Barrie?',
+        answer: 'Common causes include dirty filters, low refrigerant, blocked outdoor unit, thermostat issues, or electrical problems. Start by checking your filter and clearing debris around the outdoor unit. If problems persist, contact RK Airsystems for professional diagnosis.'
+      },
+      {
+        question: 'Do you offer same-day AC repair in Barrie?',
+        answer: 'Yes, RK Airsystems offers same-day AC repair service in Barrie whenever possible. We understand the importance of staying cool during Barrie\'s hot summers and work quickly to restore your comfort.'
+      },
+      {
+        question: 'Should I repair or replace my AC in Barrie?',
+        answer: 'If your AC is over 10-15 years old, requires frequent repairs, or has a major component failure, replacement may be more cost-effective. RK Airsystems can assess your system and provide honest recommendations based on your specific situation in Barrie.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
       <p class="text-lg mb-8">Before the heat of summer hits, make sure your AC is ready. Knowing how to identify common issues can prevent major breakdowns.</p>
@@ -489,7 +581,29 @@ const blogPosts = {
     readTime: '4 min read',
     image: '/furnace-issue-image.webp',
     category: 'Maintenance',
-    excerpt: 'Learn about common furnace issues, troubleshooting tips, and when to call professionals for your furnace repair needs in Barrie.',
+    excerpt: 'Furnace problems in Barrie? Learn common issues and when to call professionals for reliable furnace repair service.',
+    faqs: [
+      {
+        question: 'How much does furnace repair cost in Barrie?',
+        answer: 'Furnace repair costs in Barrie vary based on the issue. Simple repairs like replacing a filter or thermostat may cost $100-300, while major component replacements can range from $500-2000. RK Airsystems provides transparent pricing with no hidden fees.'
+      },
+      {
+        question: 'How often should I service my furnace in Barrie?',
+        answer: 'We recommend annual furnace maintenance in Barrie, ideally in the fall before winter. This prevents breakdowns during cold weather and ensures your system runs efficiently throughout Barrie\'s harsh winters.'
+      },
+      {
+        question: 'What are signs my furnace needs repair in Barrie?',
+        answer: 'Common signs include uneven heating, strange noises (banging, rattling), high energy bills, yellow or flickering flames, frequent cycling, or the furnace not starting. If you notice any of these, contact RK Airsystems for professional diagnosis.'
+      },
+      {
+        question: 'Do you offer emergency furnace repair in Barrie?',
+        answer: 'Yes, RK Airsystems offers 24/7 emergency furnace repair service in Barrie. We understand that furnace failures can happen at any time, especially during Barrie\'s cold winters, and we\'re available whenever you need us.'
+      },
+      {
+        question: 'How long does a furnace repair take in Barrie?',
+        answer: 'Most furnace repairs in Barrie can be completed in 1-3 hours. Simple repairs like replacing filters or thermostats take less than an hour, while more complex issues may require 2-4 hours. We work efficiently to restore your heat as quickly as possible.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
       <p class="text-lg mb-8">During the harsh winters in Barrie, a reliable furnace isn't just a luxury—it's essential. If your furnace is acting up, recognizing the early warning signs can help you avoid costly breakdowns and ensure your family stays warm and safe. Here's everything you need to know about furnace repair and how RK Airsystems can help.</p>
@@ -558,17 +672,39 @@ const blogPosts = {
     </div>
     `
   },
-  'heat-pump-benefits': {
+  'heat-pump-benefits-barrie': {
     title: 'The Benefits of Heat Pumps for Year-Round Comfort',
     date: '2024-03-20',
     author: 'Rob Kloepfer',
     readTime: '5 min read',
     image: '/heat-pump-blog.webp',
     category: 'Energy Efficiency',
-    excerpt: 'Discover how heat pumps can provide efficient heating and cooling while reducing your energy bills.',
+    excerpt: 'Heat pumps in Barrie provide efficient heating and cooling year-round. Discover how they reduce energy bills and improve comfort.',
+    faqs: [
+      {
+        question: 'Do heat pumps work in Barrie\'s cold winters?',
+        answer: 'Yes, modern heat pumps are designed to work efficiently even in Barrie\'s cold winters. Advanced models can operate effectively in temperatures as low as -25°C. For extremely cold periods, some systems include backup heating to ensure consistent comfort in Barrie.'
+      },
+      {
+        question: 'How much can I save with a heat pump in Barrie?',
+        answer: 'Heat pumps can reduce heating costs by up to 50% compared to traditional systems in Barrie. The exact savings depend on your current system, home insulation, and usage patterns. RK Airsystems can provide a detailed energy analysis for your Barrie home.'
+      },
+      {
+        question: 'What\'s the cost of installing a heat pump in Barrie?',
+        answer: 'Heat pump installation costs in Barrie typically range from $5,000 to $15,000, depending on system size, type, and home requirements. This includes equipment, installation, and necessary modifications. RK Airsystems provides transparent pricing and can discuss financing options.'
+      },
+      {
+        question: 'How long do heat pumps last in Barrie?',
+        answer: 'With proper maintenance, heat pumps in Barrie typically last 15-20 years. Regular maintenance, including annual tune-ups, helps maximize lifespan and efficiency. RK Airsystems offers maintenance plans to keep your Barrie heat pump running optimally.'
+      },
+      {
+        question: 'Can a heat pump replace both my furnace and AC in Barrie?',
+        answer: 'Yes, heat pumps can replace both your furnace and air conditioning in Barrie, providing year-round comfort with a single system. This simplifies maintenance and can reduce overall costs. RK Airsystems can assess your Barrie home to determine if a heat pump is the right solution.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
-      <p class="text-lg mb-8">Heat pumps are becoming increasingly popular in Barrie homes, and for good reason. These versatile systems provide both heating and cooling while offering significant energy savings. Let's explore why a heat pump might be the perfect solution for your home comfort needs.</p>
+      <p class="text-lg mb-8">Heat pumps are becoming increasingly popular in Barrie homes, and for good reason. These versatile systems provide both heating and cooling while offering significant energy savings. Let's explore why a heat pump might be the perfect solution for your <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">HVAC needs in Barrie</a>.</p>
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Key Benefits of Heat Pumps</h2>
       
@@ -621,27 +757,49 @@ const blogPosts = {
       
       <div class="bg-gray-50 p-6 rounded-xl mb-8">
         <h3 class="text-primary font-semibold text-xl mb-4">Expert Tip</h3>
-        <p class="text-lg">Modern heat pumps can operate efficiently even in Barrie's cold winters, but proper sizing and installation are crucial for optimal performance.</p>
+        <p class="text-lg">Modern heat pumps can operate efficiently even in Barrie's cold winters, but proper sizing and <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">professional installation</a> are crucial for optimal performance. <a href="/blogs/hvac-maintenance-tips" class="text-primary hover:text-secondary underline font-semibold">Regular maintenance</a> ensures your heat pump continues to save energy year-round.</p>
       </div>
       
       <div class="text-lg font-medium mt-12">
         <span class="text-primary text-2xl mr-2">💡</span>
-        <strong class="text-primary">Ready to explore heat pump options?</strong> Contact RK Airsystems for a professional consultation.
+        <strong class="text-primary">Ready to explore heat pump options?</strong> <a href="/#contact" class="text-primary hover:text-secondary underline font-semibold">Contact RK Airsystems</a> for a professional consultation in Barrie.
       </div>
     </div>
     `
   },
-  'hvac-maintenance-tips': {
+  'hvac-maintenance-tips-barrie': {
     title: 'Essential HVAC Maintenance Tips for Homeowners',
     date: '2024-03-15',
     author: 'Rob Kloepfer',
     readTime: '4 min read',
     image: '/hvac-maintenance.webp',
     category: 'Maintenance',
-    excerpt: 'Learn the key maintenance tasks that will keep your HVAC system running efficiently all year long.',
+    excerpt: 'Keep your HVAC system running efficiently in Barrie. Essential maintenance tips to prevent costly repairs and ensure year-round comfort.',
+    faqs: [
+      {
+        question: 'How often should I service my HVAC system in Barrie?',
+        answer: 'We recommend annual HVAC maintenance in Barrie - once in the spring for your AC and once in the fall for your furnace. This ensures your system is ready for Barrie\'s extreme temperatures and prevents breakdowns when you need heating or cooling most.'
+      },
+      {
+        question: 'What does professional HVAC maintenance include in Barrie?',
+        answer: 'Professional HVAC maintenance in Barrie includes cleaning coils, checking refrigerant levels, inspecting electrical connections, testing safety controls, lubricating moving parts, checking filters, and optimizing system performance. RK Airsystems provides comprehensive maintenance to keep your Barrie system running efficiently.'
+      },
+      {
+        question: 'Can I do HVAC maintenance myself in Barrie?',
+        answer: 'Basic maintenance like changing filters and clearing debris can be done yourself. However, professional maintenance in Barrie is essential for safety, efficiency, and warranty compliance. RK Airsystems technicians have the expertise to identify and prevent problems before they become costly repairs.'
+      },
+      {
+        question: 'How much does HVAC maintenance cost in Barrie?',
+        answer: 'HVAC maintenance costs in Barrie typically range from $150-300 per visit. This is a small investment compared to emergency repairs, which can cost $500-2000+. Regular maintenance also reduces energy costs and extends system lifespan, saving money long-term.'
+      },
+      {
+        question: 'What happens if I skip HVAC maintenance in Barrie?',
+        answer: 'Skipping maintenance in Barrie can lead to reduced efficiency, higher energy bills, breakdowns during extreme weather, voided warranties, and costly emergency repairs. Regular maintenance prevents these issues and ensures your system is ready for Barrie\'s harsh winters and hot summers.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
-      <p class="text-lg mb-8">Regular HVAC maintenance is key to ensuring your system runs efficiently and reliably year-round. Follow these essential tips to keep your heating and cooling system in top condition and prevent costly repairs.</p>
+      <p class="text-lg mb-8">Regular HVAC maintenance is key to ensuring your system runs efficiently and reliably year-round in Barrie. Follow these essential tips to keep your heating and cooling system in top condition and prevent costly repairs. For <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">professional HVAC maintenance in Barrie</a>, contact RK Airsystems.</p>
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Monthly Maintenance Tasks</h2>
       
@@ -717,22 +875,44 @@ const blogPosts = {
       
       <div class="text-lg font-medium mt-12">
         <span class="text-primary text-2xl mr-2">🔧</span>
-        <strong class="text-primary">Need professional maintenance?</strong> Schedule your HVAC tune-up with RK Airsystems today.
+        <strong class="text-primary">Need professional maintenance?</strong> Schedule your <a href="/#contact" class="text-primary hover:text-secondary underline font-semibold">HVAC tune-up with RK Airsystems</a> today. Also check out our <a href="/blogs/fall-hvac-preparation" class="text-primary hover:text-secondary underline font-semibold">fall preparation guide</a> and <a href="/blogs/summer-hvac-tips-barrie" class="text-primary hover:text-secondary underline font-semibold">summer maintenance tips</a> for Barrie homeowners.
       </div>
     </div>
     `
   },
-  'indoor-air-quality': {
+  'indoor-air-quality-barrie': {
     title: 'Improving Your Home\'s Indoor Air Quality',
     date: '2024-03-10',
     author: 'Rob Kloepfer',
     readTime: '6 min read',
     image: '/air-quality-blog.webp',
     category: 'Air Quality',
-    excerpt: 'Simple steps to enhance the air quality in your home and protect your family\'s health.',
+    excerpt: 'Improve indoor air quality in your Barrie home. Simple steps to enhance air quality and protect your family\'s health year-round.',
+    faqs: [
+      {
+        question: 'Why is indoor air quality important in Barrie?',
+        answer: 'Indoor air quality is crucial in Barrie because we spend up to 90% of our time indoors, especially during harsh winters. Poor air quality can cause allergies, respiratory issues, and health problems. Barrie\'s cold winters mean homes are sealed tight, trapping pollutants inside.'
+      },
+      {
+        question: 'What causes poor indoor air quality in Barrie homes?',
+        answer: 'Common causes in Barrie include dust and allergens, pet dander, mold from humidity, VOCs from cleaning products, and inadequate ventilation. During Barrie winters, homes are sealed tight, which can trap pollutants. Proper HVAC systems and air filtration help maintain healthy air quality.'
+      },
+      {
+        question: 'How can I improve air quality in my Barrie home?',
+        answer: 'Improve air quality in Barrie by using high-efficiency air filters, ensuring proper ventilation, controlling humidity (30-50%), regular HVAC maintenance, and considering air purifiers or HRV systems. RK Airsystems offers comprehensive air quality solutions for Barrie homes.'
+      },
+      {
+        question: 'Do I need an air purifier in Barrie?',
+        answer: 'Air purifiers can significantly improve air quality in Barrie, especially for homes with allergies, pets, or respiratory concerns. High-efficiency HVAC filters may be sufficient, but air purifiers provide additional filtration. RK Airsystems can assess your Barrie home and recommend the best solution.'
+      },
+      {
+        question: 'How often should I change air filters in Barrie?',
+        answer: 'In Barrie, change basic filters every 1-3 months, and high-efficiency filters every 3-6 months. During heavy use (winter heating, summer cooling), check monthly. Dirty filters reduce air quality and HVAC efficiency. RK Airsystems can help you choose the right filters for your Barrie home.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
-      <p class="text-lg mb-8">Indoor air quality has a significant impact on your health and comfort. With Canadians spending up to 90% of their time indoors, ensuring clean air in your home is more important than ever. Learn how to identify and address common air quality issues.</p>
+      <p class="text-lg mb-8">Indoor air quality has a significant impact on your health and comfort in Barrie. With Canadians spending up to 90% of their time indoors, especially during Barrie\'s cold winters, ensuring clean air in your home is more important than ever. Learn how to identify and address common air quality issues. For <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">air quality solutions in Barrie</a>, contact RK Airsystems.</p>
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Common Indoor Air Pollutants</h2>
       
@@ -827,22 +1007,44 @@ const blogPosts = {
       
       <div class="text-lg font-medium mt-12">
         <span class="text-primary text-2xl mr-2">🌬️</span>
-        <strong class="text-primary">Breathe easier at home.</strong> Contact RK Airsystems to explore our air quality solutions.
+        <strong class="text-primary">Breathe easier at home.</strong> <a href="/#contact" class="text-primary hover:text-secondary underline font-semibold">Contact RK Airsystems</a> to explore our <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">air quality solutions in Barrie</a>. Regular <a href="/blogs/hvac-maintenance-tips-barrie" class="text-primary hover:text-secondary underline font-semibold">HVAC maintenance</a> also helps maintain healthy indoor air quality.
       </div>
     </div>
     `
   },
-  'fall-hvac-preparation': {
+  'fall-hvac-preparation-barrie': {
     title: 'Fall HVAC Preparation: Get Your Home Ready for Winter',
     date: '2025-09-15',
     author: 'Rob Kloepfer',
     readTime: '5 min read',
     image: '/blog-sep.jpeg',
     category: 'Maintenance',
-    excerpt: 'Essential fall maintenance tasks to ensure your heating system is ready for Barrie\'s cold winter months.',
+    excerpt: 'Prepare your HVAC system for Barrie\'s winter. Essential fall maintenance tasks to ensure reliable heating during cold months.',
+    faqs: [
+      {
+        question: 'When should I schedule fall HVAC maintenance in Barrie?',
+        answer: 'Schedule fall HVAC maintenance in Barrie in early September, before the first cold snap. This ensures your furnace is ready when temperatures drop and avoids the rush when everyone realizes their system needs service. Early scheduling also helps prevent emergency repairs during Barrie\'s harsh winters.'
+      },
+      {
+        question: 'What does fall HVAC maintenance include in Barrie?',
+        answer: 'Fall HVAC maintenance in Barrie includes furnace inspection, cleaning burners and heat exchangers, checking gas connections, testing safety controls, replacing air filters, inspecting ductwork, and testing thermostat. RK Airsystems provides comprehensive fall maintenance to prepare your Barrie home for winter.'
+      },
+      {
+        question: 'Why is fall maintenance important in Barrie?',
+        answer: 'Fall maintenance is crucial in Barrie because your furnace has been idle for months. Dust, debris, and potential issues may have accumulated. Professional maintenance ensures your heating system starts reliably when Barrie\'s cold weather arrives, preventing breakdowns when you need heat most.'
+      },
+      {
+        question: 'Can I skip fall maintenance if my furnace worked last winter?',
+        answer: 'No, even if your furnace worked last winter, fall maintenance in Barrie is essential. It prevents problems before they occur, improves efficiency, reduces energy costs, and ensures safety. Small issues can become major problems if left unaddressed during Barrie\'s harsh winters.'
+      },
+      {
+        question: 'What happens if I don\'t do fall maintenance in Barrie?',
+        answer: 'Skipping fall maintenance in Barrie can lead to furnace breakdowns during cold weather, higher energy bills, safety hazards (like carbon monoxide leaks), voided warranties, and costly emergency repairs. Regular maintenance is much cheaper than emergency service calls during Barrie winters.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
-      <p class="text-lg mb-8">As the leaves change color and temperatures begin to drop, it's time to shift your attention from cooling to heating. Fall is the perfect season to prepare your HVAC system for the harsh Barrie winters ahead. Taking proactive steps now can prevent costly emergency repairs when you need heat the most.</p>
+      <p class="text-lg mb-8">As the leaves change color and temperatures begin to drop, it's time to shift your attention from cooling to heating. Fall is the perfect season to prepare your HVAC system for the harsh Barrie winters ahead. Taking proactive steps now can prevent costly emergency repairs when you need heat the most. For <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">professional HVAC maintenance in Barrie</a>, contact RK Airsystems.</p>
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Why Fall Maintenance Matters</h2>
       
@@ -934,22 +1136,44 @@ const blogPosts = {
       
       <div class="text-lg font-medium mt-12">
         <span class="text-primary text-2xl mr-2">🍂</span>
-        <strong class="text-primary">Don't wait for the first cold snap.</strong> Schedule your fall HVAC maintenance with RK Airsystems today and ensure a warm, comfortable winter ahead.
+        <strong class="text-primary">Don't wait for the first cold snap.</strong> <a href="/#contact" class="text-primary hover:text-secondary underline font-semibold">Schedule your fall HVAC maintenance with RK Airsystems</a> today and ensure a warm, comfortable winter ahead. Also check our <a href="/blogs/winter-furnace-efficiency" class="text-primary hover:text-secondary underline font-semibold">winter efficiency tips</a> and <a href="/blogs/furnace-repair-barrie" class="text-primary hover:text-secondary underline font-semibold">furnace repair guide</a> for Barrie homeowners.
       </div>
     </div>
     `
   },
-  'winter-furnace-efficiency': {
+  'winter-furnace-efficiency-barrie': {
     title: 'Maximizing Furnace Efficiency Before Winter Hits',
     date: '2025-10-18',
     author: 'Rob Kloepfer',
     readTime: '4 min read',
     image: '/blog-oct.jpeg',
     category: 'Energy Efficiency',
-    excerpt: 'Learn how to optimize your furnace performance and reduce heating costs during the coldest months of the year.',
+    excerpt: 'Maximize furnace efficiency in Barrie this winter. Learn how to optimize performance and reduce heating costs during cold months.',
+    faqs: [
+      {
+        question: 'How can I improve my furnace efficiency in Barrie?',
+        answer: 'Improve furnace efficiency in Barrie by scheduling annual maintenance, replacing air filters regularly, sealing ductwork leaks, upgrading to high-efficiency filters, installing a programmable thermostat, and ensuring proper insulation. RK Airsystems can assess your Barrie furnace and recommend efficiency improvements.'
+      },
+      {
+        question: 'What temperature should I set my furnace in Barrie?',
+        answer: 'For optimal efficiency in Barrie, set your furnace to 68-70°F (20-21°C) when home and 62-65°F (16-18°C) when away or sleeping. Lowering the temperature by just 2-3 degrees can save 5-10% on heating costs in Barrie\'s cold winters.'
+      },
+      {
+        question: 'How much can I save with an efficient furnace in Barrie?',
+        answer: 'High-efficiency furnaces in Barrie can reduce heating costs by 15-30% compared to older models. With Barrie\'s cold winters, this can save hundreds of dollars annually. Modern furnaces also provide more consistent heating and better comfort during Barrie\'s harsh winters.'
+      },
+      {
+        question: 'When should I replace my furnace in Barrie?',
+        answer: 'Consider replacing your furnace in Barrie if it\'s over 15 years old, requires frequent repairs, has high energy bills, or provides uneven heating. RK Airsystems can assess your Barrie furnace and help determine if replacement is more cost-effective than continued repairs.'
+      },
+      {
+        question: 'Do I need a new furnace if mine is inefficient in Barrie?',
+        answer: 'Not necessarily. Many efficiency issues in Barrie can be addressed through maintenance, filter upgrades, duct sealing, or thermostat upgrades. However, if your furnace is old and inefficient, replacement may be more cost-effective. RK Airsystems can provide an honest assessment for your Barrie home.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
-      <p class="text-lg mb-8">With winter approaching, your furnace is about to become your home's most important appliance. Maximizing its efficiency now can significantly reduce your heating costs and ensure reliable performance throughout the cold season. Here's how to get the most from your heating system.</p>
+      <p class="text-lg mb-8">With winter approaching in Barrie, your furnace is about to become your home's most important appliance. Maximizing its efficiency now can significantly reduce your heating costs and ensure reliable performance throughout the cold season. Here's how to get the most from your heating system. For <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">furnace maintenance and upgrades in Barrie</a>, contact RK Airsystems.</p>
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Understanding Furnace Efficiency</h2>
       
@@ -1050,22 +1274,44 @@ const blogPosts = {
       
       <div class="text-lg font-medium mt-12">
         <span class="text-primary text-2xl mr-2">🔥</span>
-        <strong class="text-primary">Maximize your furnace efficiency today.</strong> Contact RK Airsystems for a professional assessment and start saving on your heating costs this winter.
+        <strong class="text-primary">Maximize your furnace efficiency today.</strong> <a href="/#contact" class="text-primary hover:text-secondary underline font-semibold">Contact RK Airsystems</a> for a professional assessment and start saving on your heating costs this winter in Barrie. Also see our <a href="/blogs/energy-saving-winter-tips" class="text-primary hover:text-secondary underline font-semibold">energy-saving tips</a> and <a href="/blogs/furnace-repair-barrie" class="text-primary hover:text-secondary underline font-semibold">furnace repair services</a>.
       </div>
     </div>
     `
   },
-  'energy-saving-winter-tips': {
+  'energy-saving-winter-tips-barrie': {
     title: 'Energy-Saving HVAC Tips for Cold Weather',
     date: '2025-11-12',
     author: 'Rob Kloepfer',
     readTime: '5 min read',
     image: '/blog-nov.jpeg',
     category: 'Energy Efficiency',
-    excerpt: 'Practical strategies to keep your home warm and comfortable while minimizing energy consumption this winter.',
+    excerpt: 'Save on heating costs in Barrie this winter. Practical strategies to stay warm while minimizing energy consumption.',
+    faqs: [
+      {
+        question: 'How can I reduce heating costs in Barrie?',
+        answer: 'Reduce heating costs in Barrie by lowering your thermostat 2-3 degrees, sealing air leaks, improving insulation, using a programmable thermostat, maintaining your furnace, and keeping vents clear. These strategies can save 10-30% on heating bills during Barrie\'s cold winters.'
+      },
+      {
+        question: 'What\'s the best thermostat setting for winter in Barrie?',
+        answer: 'For optimal efficiency in Barrie, set your thermostat to 68-70°F (20-21°C) when home and 62-65°F (16-18°C) when away or sleeping. A programmable or smart thermostat can automatically adjust temperatures and save 10-15% on heating costs in Barrie.'
+      },
+      {
+        question: 'How much can I save by sealing air leaks in Barrie?',
+        answer: 'Sealing air leaks in Barrie can save 10-20% on heating costs. Common leak areas include windows, doors, electrical outlets, and attic hatches. With Barrie\'s cold winters, preventing heat loss through leaks significantly reduces energy bills.'
+      },
+      {
+        question: 'Should I close vents in unused rooms in Barrie?',
+        answer: 'No, closing too many vents in Barrie can reduce system efficiency and cause pressure imbalances. Instead, focus on sealing the unused room and keeping the door closed. This maintains system balance while reducing heating needs in that space.'
+      },
+      {
+        question: 'How often should I change filters to save energy in Barrie?',
+        answer: 'Change filters every 1-3 months during heating season in Barrie. Dirty filters restrict airflow, forcing your furnace to work harder and consume more energy. Regular filter changes can improve efficiency by 5-15% and reduce heating costs during Barrie winters.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
-      <p class="text-lg mb-8">As temperatures drop in Barrie, heating costs can quickly become a significant expense. However, with the right strategies, you can maintain a comfortable home while keeping your energy bills manageable. These practical tips will help you save money without sacrificing comfort during the coldest months.</p>
+      <p class="text-lg mb-8">As temperatures drop in Barrie, heating costs can quickly become a significant expense. However, with the right strategies, you can maintain a comfortable home while keeping your energy bills manageable. These practical tips will help you save money without sacrificing comfort during the coldest months. For <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">energy efficiency services in Barrie</a>, contact RK Airsystems.</p>
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Smart Thermostat Management</h2>
       
@@ -1204,22 +1450,44 @@ const blogPosts = {
       
       <div class="text-lg font-medium mt-12">
         <span class="text-primary text-2xl mr-2">❄️</span>
-        <strong class="text-primary">Start saving on heating costs today.</strong> Contact RK Airsystems for a professional energy assessment and discover how much you can save this winter.
+        <strong class="text-primary">Start saving on heating costs today.</strong> <a href="/#contact" class="text-primary hover:text-secondary underline font-semibold">Contact RK Airsystems</a> for a professional energy assessment and discover how much you can save this winter in Barrie. Also check our <a href="/blogs/winter-furnace-efficiency-barrie" class="text-primary hover:text-secondary underline font-semibold">furnace efficiency guide</a> and <a href="/blogs/hvac-maintenance-tips-barrie" class="text-primary hover:text-secondary underline font-semibold">maintenance tips</a>.
       </div>
     </div>
     `
   },
-  'holiday-hvac-tips': {
+  'holiday-hvac-tips-barrie': {
     title: 'Holiday Season HVAC Tips: Keep Your Home Comfortable',
     date: '2025-12-08',
     author: 'Rob Kloepfer',
     readTime: '4 min read',
     image: '/blog-dec.jpeg',
     category: 'Maintenance',
-    excerpt: 'Essential HVAC maintenance and efficiency tips to ensure a warm, comfortable home during the holiday season.',
+    excerpt: 'Keep your Barrie home comfortable during the holidays. Essential HVAC tips for warm, efficient heating during celebrations.',
+    faqs: [
+      {
+        question: 'How should I adjust my thermostat during holidays in Barrie?',
+        answer: 'During holidays in Barrie, you may be able to lower your thermostat slightly since more people generate body heat. However, with guests and cooking, maintain comfortable temperatures (68-70°F). Use a smart thermostat to maintain consistent temperatures and save energy when rooms are unoccupied.'
+      },
+      {
+        question: 'What HVAC maintenance should I do before holidays in Barrie?',
+        answer: 'Before holidays in Barrie, replace air filters, test your heating system, check thermostat functionality, inspect vents, and verify carbon monoxide detectors work. This ensures reliable heating during celebrations and prevents emergencies when you have guests.'
+      },
+      {
+        question: 'How can I improve air quality during holiday gatherings in Barrie?',
+        answer: 'Improve air quality during Barrie holiday gatherings by using kitchen exhaust fans while cooking, opening windows briefly for fresh air, ensuring vents aren\'t blocked by decorations, running bathroom exhaust fans, and replacing air filters before guests arrive. This maintains healthy air quality with increased indoor activity.'
+      },
+      {
+        question: 'Should I worry about HVAC during holidays in Barrie?',
+        answer: 'Yes, HVAC is important during Barrie holidays because you want reliable heating for guests, and system failures are inconvenient during celebrations. Schedule pre-holiday maintenance, keep RK Airsystems\' emergency contact handy, and ensure your system is ready before guests arrive.'
+      },
+      {
+        question: 'What if my furnace breaks during holidays in Barrie?',
+        answer: 'If your furnace breaks during holidays in Barrie, RK Airsystems offers 24/7 emergency service. We understand the importance of reliable heating during celebrations and can quickly restore your comfort. Keep our contact number handy: (705) 220-5272.'
+      }
+    ],
     content: `
     <div class="text-gray-900 leading-relaxed font-sans">
-      <p class="text-lg mb-8">The holiday season brings family gatherings, festive celebrations, and increased activity in your home. With more people, more cooking, and more time spent indoors, your HVAC system faces unique challenges. These tips will help ensure your home stays comfortable and your system runs efficiently throughout the holidays.</p>
+      <p class="text-lg mb-8">The holiday season brings family gatherings, festive celebrations, and increased activity in your Barrie home. With more people, more cooking, and more time spent indoors, your HVAC system faces unique challenges. These tips will help ensure your home stays comfortable and your system runs efficiently throughout the holidays. For <a href="/#services" class="text-primary hover:text-secondary underline font-semibold">pre-holiday HVAC maintenance in Barrie</a>, contact RK Airsystems.</p>
       
       <h2 class="text-primary font-bold text-3xl mt-12 mb-6">Pre-Holiday HVAC Preparation</h2>
       
@@ -1349,12 +1617,35 @@ const blogPosts = {
       
       <div class="text-lg font-medium mt-12">
         <span class="text-primary text-2xl mr-2">🎅</span>
-        <strong class="text-primary">Keep the warmth in and the cold out this holiday season.</strong> Contact RK Airsystems today for pre-holiday maintenance or emergency service when you need it most.
+        <strong class="text-primary">Keep the warmth in and the cold out this holiday season.</strong> <a href="/#contact" class="text-primary hover:text-secondary underline font-semibold">Contact RK Airsystems</a> today for pre-holiday maintenance or <a href="/blogs/furnace-repair-barrie" class="text-primary hover:text-secondary underline font-semibold">emergency service</a> when you need it most in Barrie. Also see our <a href="/blogs/energy-saving-winter-tips-barrie" class="text-primary hover:text-secondary underline font-semibold">energy-saving tips</a> for the season.
       </div>
     </div>
     `
   }
 };
+
+// Helper function to generate SEO-optimized title (60 chars max)
+function generateSEOTitle(title: string, location: string = 'Barrie'): string {
+  // Extract primary keyword from title and create optimized title
+  const titleTag = `${title.split(':')[0]} ${location} | RK Air Systems`;
+  // Ensure it's under 60 characters
+  return titleTag.length > 60 ? titleTag.substring(0, 57) + '...' : titleTag;
+}
+
+// Helper function to generate SEO-optimized meta description (150-160 chars)
+function generateMetaDescription(excerpt: string, location: string = 'Barrie'): string {
+  // Ensure Barrie is included and add CTA if not present
+  let description = excerpt;
+  if (!description.toLowerCase().includes(location.toLowerCase())) {
+    description = description.replace(/\.$/, ` in ${location}.`);
+  }
+  // Add service intent and CTA if needed
+  if (description.length < 140) {
+    description += ' Contact us for professional HVAC service.';
+  }
+  // Trim to 160 characters max
+  return description.length > 160 ? description.substring(0, 157) + '...' : description;
+}
 
 // Generate metadata for each blog post
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -1363,21 +1654,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!post) {
     return {
-      title: 'Blog Post Not Found | RK AirSystems',
+      title: 'Blog Post Not Found | RK Air Systems',
       description: 'The requested blog post could not be found.',
     };
   }
 
+  const seoTitle = generateSEOTitle(post.title);
+  const metaDescription = generateMetaDescription(post.excerpt);
+
   return {
-    title: `${post.title} | RK AirSystems`,
-    description: post.excerpt,
+    title: seoTitle,
+    description: metaDescription,
     keywords: `HVAC, ${post.category.toLowerCase()}, Barrie, ${post.title.toLowerCase()}, air conditioning, heating, furnace repair`,
     authors: [{ name: post.author }],
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: seoTitle,
+      description: metaDescription,
       url: `https://www.rkairsystems.ca/blogs/${resolvedParams.slug}`,
-      siteName: 'RK AirSystems',
+      siteName: 'RK Air Systems',
       locale: 'en_CA',
       type: 'article',
       publishedTime: post.date,
@@ -1393,8 +1687,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
+      title: seoTitle,
+      description: metaDescription,
       images: [`https://www.rkairsystems.ca${post.image}`],
     },
     alternates: {
@@ -1414,14 +1708,43 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+// Generate FAQ Schema JSON-LD
+function generateFAQSchema(faqs: FAQ[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  };
+}
+
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const post = blogPosts[resolvedParams.slug as keyof typeof blogPosts];
 
   if (!post) notFound();
 
+  // Get FAQs for this post (will be added to each blog post data)
+  const faqs: FAQ[] = (post as any).faqs || [];
+
   return (
     <article className="max-w-3xl mx-auto px-4 py-12 font-sans">
+      {/* FAQ Schema JSON-LD */}
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateFAQSchema(faqs))
+          }}
+        />
+      )}
+
       {/* Navigation */}
       <Link 
         href="/blogs" 
@@ -1434,7 +1757,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       <header className="mb-12">
         <Image
           src={post.image}
-          alt={post.title}
+          alt={`${post.title} - HVAC services in Barrie`}
           width={1200}
           height={600}
           className="rounded-xl mb-8 shadow-lg"
@@ -1477,6 +1800,21 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         className="mt-12"
         dangerouslySetInnerHTML={{ __html: post.content }} 
       />
+
+      {/* FAQ Section */}
+      {faqs.length > 0 && (
+        <section className="mt-16">
+          <h2 className="text-3xl font-bold text-primary mb-8">Frequently Asked Questions About HVAC in Barrie</h2>
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-gray-50 rounded-xl p-6 border-l-4 border-primary">
+                <h3 className="text-xl font-semibold text-primary mb-3">{faq.question}</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <div className="mt-16 p-8 bg-primary rounded-xl text-white text-center shadow-lg">
