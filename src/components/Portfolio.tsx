@@ -38,6 +38,11 @@ export default function Portfolio() {
       title: "Energy Efficiency Upgrades",
       description: "Save money with our energy-efficient HVAC solutions"
     },
+    { 
+      image: "/boiler-job.png", 
+      title: "Professional Boiler Installation",
+      description: "Expert boiler installation and repair services for your home or business"
+    },
   ];
 
   useEffect(() => {
